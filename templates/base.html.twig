@@ -2,8 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Gersey Stelmach | Web developer based in Orléans, France{% endblock %}</title>
-             {% block stylesheets %}
+        <title>
+            {% block title %}Gersey Stelmach | Web developer based in Orléans, France
+            {% endblock %}
+        </title>
+        {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
@@ -12,10 +15,11 @@
         {% endblock %}
     </head>
     <body>
+        {% block navbar %}{% endblock %}
         {% block body %}{% endblock %}
     </body>
 
     <footer>
-     {% block footer %}{% endblock %}
+        {% block footer %}{% endblock %}
     </footer>
 </html>
