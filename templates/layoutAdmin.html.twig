@@ -1,12 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - Admin{% endblock %}
+{% block title %}
+    {{ parent() }}
+    - Admin
+{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
 {% endblock %}
 
-{% block navbar %} 
+{% block navbar %}
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="{{ path('admin_home') }}">
+                <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                Gersey Stelmach | Admin Panel
+            </a>
+            {% if app.user %}
+                <div>
+                    <span class="me-2 text-secondary">{{ app.user.email }}
+                    </span>
+                    <a href="{{ path('app_logout') }}" class="btn btn-secondary fw-bold text-light">
+                        Logout</a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
 {% endblock %}
 
 {% block footer %}{% endblock %}

@@ -39,6 +39,7 @@ class PortfolioController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+          
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($portfolio);
             $entityManager->flush();

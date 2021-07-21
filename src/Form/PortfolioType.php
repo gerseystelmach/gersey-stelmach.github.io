@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Skill;
-use App\Entity\Category;
 use App\Entity\Portfolio;
 use Symfony\Component\Form\AbstractType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
