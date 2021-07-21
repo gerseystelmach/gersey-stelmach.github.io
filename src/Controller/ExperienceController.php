@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 /**
  * @Route("/admin/experience")
  */
@@ -17,6 +17,7 @@ class ExperienceController extends AbstractController
 {
     /**
      * @Route("/", name="experience_index", methods={"GET"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function index(ExperienceRepository $experienceRepository): Response
     {
@@ -27,6 +28,7 @@ class ExperienceController extends AbstractController
 
     /**
      * @Route("/new", name="experience_new", methods={"GET","POST"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +52,7 @@ class ExperienceController extends AbstractController
 
     /**
      * @Route("/{id}", name="experience_show", methods={"GET"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function show(Experience $experience): Response
     {
@@ -60,6 +63,7 @@ class ExperienceController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="experience_edit", methods={"GET","POST"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function edit(Request $request, Experience $experience): Response
     {
@@ -80,6 +84,7 @@ class ExperienceController extends AbstractController
 
     /**
      * @Route("/{id}", name="experience_delete", methods={"POST"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function delete(Request $request, Experience $experience): Response
     {
