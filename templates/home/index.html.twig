@@ -5,7 +5,20 @@
     <main>
         <header>
             <div class="hero-image p-0">
+
                 <nav class="text-end d-flex justify-content-md-end">
+                    {% if app.user %}
+                        <div class"p-2">
+                            <p>
+                                Olá, Gersey. You are authenticated as <span class="fw-bold">{{ app.user.email }} </span>
+                                <a href="{{ path('admin_home') }}" class="btn btn-secondary mx-2 fw-bold">
+                                    Admin Panel
+                                </a>
+                                <a href="{{ path('app_logout') }}" class="btn btn-dark my-5 me-5 fw-bold">
+                                    Disconnect</a>
+                            </p>
+                        </div>
+                    {% endif %}
                     <div class="bg-secondary d-flex flex-column nav-style align-items-start p-5 rounded-bottom">
 
                         <a class="nav-link mt-5 p-5 p-lg-2 nav-font text-light" href="#aboutMe">About me</a>

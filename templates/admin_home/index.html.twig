@@ -1,0 +1,31 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Experience
+{% endblock %}
+
+{% block body %}
+    <main class="container mt-5">
+        <h1>Gersey Stelmach's Admin Panel</h1>
+        <div>
+            <a href="{{ path('skill_index') }} ">Skills</a>
+        </div>
+        <div>
+            <a href="{{ path('experience_index') }}">Experiences</a>
+        </div>
+
+        <div>
+            <a href="{{ path('portfolio_index') }}">Portfolio</a>
+        </div>
+        <div>
+            <a href="{{ path('category_index') }}">Category</a>
+        </div>
+        <div>
+            <a href="">Blog</a>
+        </div>
+
+
+         <div class="my-5">
+                  <a href="{{ path('home') }}" class="btn btn-primary">My website</a>
+        </div>
+    </main>
+{% endblock %}

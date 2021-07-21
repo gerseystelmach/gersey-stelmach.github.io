@@ -9,14 +9,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/admin/portfolio")
+ * @IsGranted("IS_AUTHENTICATED_FULLY")
  */
 class PortfolioController extends AbstractController
 {
     /**
      * @Route("/", name="portfolio_index", methods={"GET"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function index(PortfolioRepository $portfolioRepository): Response
     {
@@ -27,6 +30,7 @@ class PortfolioController extends AbstractController
 
     /**
      * @Route("/new", name="portfolio_new", methods={"GET","POST"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,7 @@ class PortfolioController extends AbstractController
 
     /**
      * @Route("/{id}", name="portfolio_show", methods={"GET"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function show(Portfolio $portfolio): Response
     {
@@ -60,6 +65,7 @@ class PortfolioController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="portfolio_edit", methods={"GET","POST"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function edit(Request $request, Portfolio $portfolio): Response
     {
@@ -80,6 +86,7 @@ class PortfolioController extends AbstractController
 
     /**
      * @Route("/{id}", name="portfolio_delete", methods={"POST"})
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function delete(Request $request, Portfolio $portfolio): Response
     {
