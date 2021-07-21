@@ -1,9 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Experience index{% endblock %}
+{% block title %}Experience{% endblock %}
 
 {% block body %}
-    <h1>Experience index</h1>
+<main class="container mt-5">
+    <h1>Experiences</h1>
 
     <table class="table">
         <thead>
@@ -24,8 +25,9 @@
                 <td>{{ experience.title }}</td>
                 <td>{{ experience.description }}</td>
                 <td>{{ experience.company }}</td>
-                <td>{{ experience.startedAt ? experience.startedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ experience.finishedAt ? experience.finishedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ experience.startedAt ? experience.startedAt|date('Y-m-d') : '' }}</td>
+                <td>{{ experience.finishedAt ? experience.finishedAt|date('Y-m-d') : '' }}</td>
+                       <td>{{ experience.finishedAt ? experience.finishedAt|date('Y-m-d') : '' }}</td>
                 <td>
                     <a href="{{ path('experience_show', {'id': experience.id}) }}">show</a>
                     <a href="{{ path('experience_edit', {'id': experience.id}) }}">edit</a>
@@ -40,4 +42,5 @@
     </table>
 
     <a href="{{ path('experience_new') }}">Create new</a>
+    </main>
 {% endblock %}

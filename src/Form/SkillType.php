@@ -2,26 +2,17 @@
 
 namespace App\Form;
 
-use App\Entity\Experience;
+use App\Entity\Skill;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 
-class ExperienceType extends AbstractType
+class SkillType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('description')
-            ->add('company')
-            ->add('startedAt', DateType::class, [
-                'widget' => 'choice',
-            ])
-            ->add('finishedAt', DateType::class, [
-                'widget' => 'choice',
-            ])
+            ->add('name')
             ->add('category', null, ['choice_label' => 'name'])
         ;
     }
@@ -29,7 +20,7 @@ class ExperienceType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Experience::class,
+            'data_class' => Skill::class,
         ]);
     }
 }
