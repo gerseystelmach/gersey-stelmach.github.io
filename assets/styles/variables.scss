@@ -1,5 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 
+
+$theme-colors: (
+  "primary": #125D98,
+  "danger": #F5A962,
+);
+
+
 $primary: #125D98;
 $secondary:#F5A962;
 $intermediary:#3C8DAD;
@@ -8,3 +15,10 @@ $white: #FFF;
 $dark: #393636;
 $titleFont: 'Ruda', sans-serif;
 $textFont: 'Open Sans', sans-serif;
+
+$space: 8px;
+$space-2: 16px;
+$space-3: 24px;
+$space-4: 32px;
+$space-5: 40px;
+$textSize: 1.3em;

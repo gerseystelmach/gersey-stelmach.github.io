@@ -1,0 +1,156 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <main>
+        <header>
+            <div class="hero-image p-0">
+                <nav class="text-end d-flex justify-content-md-end">
+                    <div class="bg-secondary d-flex flex-column nav-style align-items-start p-5 rounded-bottom">
+
+                        <a class="nav-link mt-5 p-5 p-lg-2 nav-font text-light" href="#aboutMe">About me</a>
+                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#experiences">Experiences</a>
+                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="">Portfolio</a>
+                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="">Blog</a>
+                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="">Contact</a>
+
+                    </div>
+                </nav>
+                <div class="hero-text text-left">
+                    <h1 class="display-1 mt-5-xl fw-bold">Gersey Stelmach</h1>
+                    <p class="display-5 text-secondary">A web developer based in France who loves to design and code simple, beautiful and functional things.</p>
+                </div>
+
+                <div class="text-end">
+                    <div class="mt-5 text-end p-5 scrollDown d-inline-block text-end">
+                        <a href="#aboutMe" class="me-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewbox="0 0 172 172" style=" fill:#000000;">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                    <g>
+                                        <path d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z" fill="#cccccc"></path>
+                                        <path d="M119.29141,66.28047c-10.27969,10.27969 -20.55938,20.59297 -30.87266,30.87266c-10.31328,-10.31328 -20.62656,-20.62656 -30.93984,-30.93984c-9.00313,-9.00313 -22.91094,5.00547 -13.87422,14.04219c12.63125,12.63125 25.2625,25.2625 37.89375,37.89375c3.82969,3.82969 10.17891,3.72891 13.94141,-0.06719c12.63125,-12.63125 25.2625,-25.2625 37.89375,-37.89375c8.96953,-9.03672 -5.03906,-22.94453 -14.04219,-13.90781z" fill="#ffffff"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="aboutMe" class="my-5">
+        <div class="container">
+            <h2 class="text-center text-uppercase" class="my-5">About me</h2>
+            <div class="row mt-5">
+                <div class="col col-lg-7 text-justify">
+                    <p class="mb-5 pe-lg-5">After moving to France in the end of 2019, I decided to make a career transition to transform my passion for computing and technology into my new profession and I'm currently studying web development at Wild Code School. You can check the things I have done in my github account.</p>
+
+                    <p class="mb-5 pe-lg-5">Although, my professional path began on the legal field in Brazil, where I could work for over 4 years in the Automotive Industry as In-house counsel and acquired extensive experience in negotiating, drafting and reviewing commercial and IT contracts. At the time, my enthusiasm for tech lead me to pursue a Specialist degree in Digital Law at USP (Universidade de São Paulo).</p>
+
+                    <p class="mb-5 pe-lg-5">I have a multicultural background, speak 3 languages (Portuguese, English and French) and I am also passionate about games, cooking and cycling.</p>
+                </div>
+
+                <div class="col-sm-12 col-lg-4 text-center">
+                    <img src="{{ asset('build/images/gersey.svg') }}" alt="Gersey's photo">
+
+                </div>
+            </div>
+            <div class="mt-5 d-flex justify-content-between">
+                <div class="w-50 border rounded p-5 m-5 bg-white border-3 cardSkill">
+                    <h3 class="text-center mb-5 fw-bold text-primary">Development</h3>
+                    <h4 class="text-center fw-bold">Languages I code:</h4>
+                    <p class="text-center">languages</p>
+
+                    <h4 class="text-center fw-bold">Dev Tools:</h4>
+                    <p class="text-center">languages</p>
+                </div>
+
+                <div class="w-50 border rounded p-5 m-5 bg-white  border-3 cardSkill">
+                    <h3 class="text-center mb-5 fw-bold text-primary">Development</h3>
+                    <h4 class="text-center fw-bold">Languages I code:</h4>
+                    <p class="text-center">languages</p>
+
+                    <h4 class="text-center fw-bold">Dev Tools:</h4>
+                    <p class="text-center">languages</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences">
+
+        <div class="container">
+            <h2 class="text-center my-5 text-uppercase">Experiences</h2>
+            <h3 class="text-primary my-5">Educations:</h3>
+
+            <h3 class="text-primary my-5">Career:</h3>
+
+
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="text-center my-5 text-uppercase">Portfolio</h2>
+        </div>
+    </section>
+
+    <section id="articles">
+        <div class="container">
+            <h2 class="text-center my-5 text-uppercase">Articles</h2>
+        </div>
+    </section>
+</main>{% endblock %}
+{% block footer %}
+<footer
+    class="bg-secondary text-center text-white">
+    <!-- Grid container -->
+    <div
+        class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+<div class="row">
+<p class="col-6">E-mail: gerseystelmach@gmail.com</p>
+
+<p class="col-6">Telephone: +33 06 38 14 10 20</p>
+</div>
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-github"></i>
+            </a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <p>
+            ©
+            {{ "now"|date("Y") }}
+            All rights reserved.
+        </p>
+        <p>
+            Handcrafted by
+            <a class="text-white" href="/">Gersey Stelmach</a>
+        </p>
+    </div>
+    <!-- Copyright -->
+</footer>{% endblock %}
