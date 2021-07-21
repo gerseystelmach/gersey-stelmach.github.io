@@ -34,10 +34,16 @@ class Category
      */
     private $skills;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Portfolio::class, mappedBy="Category")
+     */
+    private $portfolios;
+
     public function __construct()
     {
         $this->experiences = new ArrayCollection();
         $this->skills = new ArrayCollection();
+        $this->portfolios = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -111,6 +117,36 @@ class Category
             // set the owning side to null (unless already changed)
             if ($skill->getCategory() === $this) {
                 $skill->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Portfolio[]
+     */
+    public function getPortfolios(): Collection
+    {
+        return $this->portfolios;
+    }
+
+    public function addPortfolio(Portfolio $portfolio): self
+    {
+        if (!$this->portfolios->contains($portfolio)) {
+            $this->portfolios[] = $portfolio;
+            $portfolio->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removePortfolio(Portfolio $portfolio): self
+    {
+        if ($this->portfolios->removeElement($portfolio)) {
+            // set the owning side to null (unless already changed)
+            if ($portfolio->getCategory() === $this) {
+                $portfolio->setCategory(null);
             }
         }
 

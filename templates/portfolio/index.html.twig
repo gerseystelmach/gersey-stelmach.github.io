@@ -1,0 +1,41 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}Portfolio index{% endblock %}
+
+{% block body %}
+<main class="container mt-5">
+    <h1>Portfolio</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ProjectName</th>
+                <th>Description</th>
+                <th>Image</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        {% for portfolio in portfolios %}
+            <tr>
+                <td>{{ portfolio.id }}</td>
+                <td>{{ portfolio.projectName }}</td>
+                <td>{{ portfolio.description }}</td>
+                <td>{{ portfolio.image }}</td>
+                <td>
+                    <a href="{{ path('portfolio_show', {'id': portfolio.id}) }}">show</a>
+                    <a href="{{ path('portfolio_edit', {'id': portfolio.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('portfolio_new') }}">Create new</a>
+    </main>
+{% endblock %}
