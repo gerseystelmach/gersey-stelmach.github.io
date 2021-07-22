@@ -1,11 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
+
+{% form_theme form with ['bootstrap_5_layout.html.twig' ] only %}
 
 {% block title %}New Experience{% endblock %}
 
 {% block body %}
+<main class="container mt-5">
     <h1>Create new Experience</h1>
 
-    {{ include('experience/_form.html.twig') }}
+    {{ include('components/_form.html.twig') }}
 
-    <a href="{{ path('experience_index') }}">back to list</a>
+    <a href="{{ path('experience_index') }}" class="btn btn-dark mt-5">back to list</a>
+    </main>
 {% endblock %}

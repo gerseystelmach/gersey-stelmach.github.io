@@ -1,11 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAdmin.html.twig' %}
+
+{% form_theme form with ['bootstrap_5_layout.html.twig' ] only %}
 
 {% block title %}New Article{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+<main class="container">
+    <h1 class="mt-5">Create new Article</h1>
 
-    {{ include('article/_form.html.twig') }}
+    {{ include('components/_form.html.twig') }}
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_index') }}" class="btn btn-dark mt-5">back to list</a>
+
+    </main>
 {% endblock %}
