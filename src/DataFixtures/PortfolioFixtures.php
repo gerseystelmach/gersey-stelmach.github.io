@@ -43,7 +43,7 @@ class PortfolioFixtures extends Fixture implements DependentFixtureInterface
                 $portfolio->addTechnology($this->getReference('skill_' . $i));
             }
 
-            $urlImage = 'https://picsum.photos/seed/picsum/500/600';
+            $urlImage = 'https://picsum.photos/800/400';
             $path = uniqid() . '.jpg';
 
             // Function to save image URL into file

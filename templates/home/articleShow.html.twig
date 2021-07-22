@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="{{ path('home') }}">
+                <img src="{{ asset('build/images/logositegersey.png') }}" alt="Gersey Logo" width="50" height="50" class="d-inline-block align-text-top">
+            </a>
+            {% if app.user %}
+                <div>
+                    <span class="me-2 text-light">{{ app.user.email }}
+                    </span>
+                    <a href="{{ path('app_logout') }}" class="btn btn-secondary fw-bold text-light">
+                        Logout</a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center my-5 text-uppercase">{{ article.title }}</h2>
+            <div class="text-center">
+                <span class="text-dark d-inline-block font-text text-intermediary ">
+                    Posted by
+                    <cite class="fw-bold">Gersey Stelmach</cite>
+                    on
+                    {{ article.createdAt ? article.createdAt|date('d/m/Y - H:i' ) : '' }}
+                </span>
+                <div class="my-5">
+                    <img src="{{ article.poster }}" alt="{{ article.title }} poster" class="rounded">
+                </div>
+
+                <p>
+                    {{ article.article }}
+                </p>
+            </div>
+        </div>
+        <div class="text-center">
+        <a href="{{ path('home_articles') }}" class="btn btn-dark text-center my-5"> Return to see all the articles</a>
+        </div>
+    </section>
+
+
+{% endblock %}
