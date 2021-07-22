@@ -7,7 +7,12 @@ body {
     background-color: $light;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $titleFont;
     letter-spacing: 5px;
 }
@@ -18,8 +23,9 @@ nav a {
 }
 
 h2 {
-    font-family: $titleFont; 
+    font-family: $titleFont;
     color: $primary;
+
     &:after {
         content: '';
         width: 150px;
@@ -27,9 +33,9 @@ h2 {
         background: $dark;
         display: block;
         margin: 10px auto;
-       
+
     }
-    
+
     &:before {
         content: '';
         width: 150px;
@@ -41,7 +47,9 @@ h2 {
 
 }
 
-p, ul, li {
+p,
+ul,
+li {
     font-family: $textFont;
     font-size: $textSize;
 }
@@ -75,14 +83,47 @@ p, ul, li {
 }
 
 .scrollDown {
-        transition: transform .2s;
-    
+    transition: transform .2s;
+
     &:hover {
         transform: translateY($space-2);
     }
 }
 
 .cardSkill {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: transform .3s;
 
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    &:hover {
+        transform: scale(102%);
+        
+    }
+
+}
+
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+    text-align: center;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $dark;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }

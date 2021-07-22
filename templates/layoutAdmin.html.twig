@@ -13,12 +13,14 @@
     <nav class="navbar navbar-light bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="{{ path('admin_home') }}">
-                <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                Gersey Stelmach | Admin Panel
+                <img src="{{ asset('build/images/logositegersey.png') }}" alt="Gersey Logo" width="50" height="50" class="d-inline-block align-text-top">
+
             </a>
+            <p class="text-light fw-bold mt-3 h4"><span class="text-secondary text-uppercase">Gersey Stelmach</span> Admin Panel</p>
+
             {% if app.user %}
                 <div>
-                    <span class="me-2 text-secondary">{{ app.user.email }}
+                    <span class="me-2 text-light">{{ app.user.email }}
                     </span>
                     <a href="{{ path('app_logout') }}" class="btn btn-secondary fw-bold text-light">
                         Logout</a>

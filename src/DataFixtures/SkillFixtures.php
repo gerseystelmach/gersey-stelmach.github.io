@@ -10,7 +10,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 class SkillFixtures extends Fixture implements DependentFixtureInterface
 {
 
-    public const SKILLS = ['Html', 'CSS', 'Symfony', 'PHP', 'Javascript', 'Bootstrap'];
+    public const SKILLS = ['Html', 'CSS', 'Symfony', 'PHP', 'Javascript', 'Bootstrap', 'Figma'];
 
 
     public function load(ObjectManager $manager)

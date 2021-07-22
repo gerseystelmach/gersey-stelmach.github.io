@@ -3,6 +3,7 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
+<main class="container mt-5">
     <h1>Article</h1>
 
     <table class="table">
@@ -21,7 +22,7 @@
             </tr>
             <tr>
                 <th>Poster</th>
-                <td>{{ article.poster }}</td>
+                <td><img src="{{ article.poster }} " alt="" class="w-25"></td>
             </tr>
             <tr>
                 <th>CreatedAt</th>
@@ -34,9 +35,10 @@
         </tbody>
     </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_index') }}" class="btn btn-dark my-5">Back to list</a>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+    <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-secondary my-5">Edit</a>
 
     {{ include('article/_delete_form.html.twig') }}
+    </main>
 {% endblock %}

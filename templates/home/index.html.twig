@@ -10,7 +10,9 @@
                     {% if app.user %}
                         <div class"p-2">
                             <p>
-                                Olá, Gersey. You are authenticated as <span class="fw-bold">{{ app.user.email }} </span>
+                                Olá, Gersey. You are authenticated as
+                                <span class="fw-bold">{{ app.user.email }}
+                                </span>
                                 <a href="{{ path('admin_home') }}" class="btn btn-secondary mx-2 fw-bold">
                                     Admin Panel
                                 </a>
@@ -71,22 +73,36 @@
                 </div>
             </div>
             <div class="mt-5 d-flex justify-content-between">
-                <div class="w-50 border rounded p-5 m-5 bg-white border-3 cardSkill">
-                    <h3 class="text-center mb-5 fw-bold text-primary">Development</h3>
-                    <h4 class="text-center fw-bold">Languages I code:</h4>
-                    <p class="text-center">languages</p>
+                <div class="w-50 rounded p-5 m-5 bg-white cardSkill text-center">
+                    <h3 class="mb-5 fw-bold text-primary">Development</h3>
+                    <h4 class="fw-bold">Technologies I use:</h4>
+                    <div class="my-5">
+                        {% for skill in skills  %}
+                            <h5 class="d-inline-block text-uppercase">
+                                ♦
+                                <span class="text-secondary fw-bold d-inline-block hover-underline-animation">{{ skill.name }}</span>
 
-                    <h4 class="text-center fw-bold">Dev Tools:</h4>
-                    <p class="text-center">languages</p>
+                            </h5>
+                        {% endfor %}
+                    </div>
                 </div>
 
-                <div class="w-50 border rounded p-5 m-5 bg-white  border-3 cardSkill">
-                    <h3 class="text-center mb-5 fw-bold text-primary">Development</h3>
-                    <h4 class="text-center fw-bold">Languages I code:</h4>
-                    <p class="text-center">languages</p>
+                <div class="w-50  rounded p-5 m-5 bg-white cardSkill text-center">
+                    <h3 class="mb-5 fw-bold text-primary">Tools</h3>
+                    <div>
+                        <h4 class="fw-bold">Tools I use:</h4>
+                        <div class="my-5">
+                            {% for skill in skills  %}
+                                {% if skill.category.name == 'Development' %}
+                                    <h5 class="d-inline-block text-uppercase">
+                                        ♦
+                                        <span class="text-secondary fw-bold  hover-underline-animation">{{ skill.name }}</span>
 
-                    <h4 class="text-center fw-bold">Dev Tools:</h4>
-                    <p class="text-center">languages</p>
+                                    </h5>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,9 +113,7 @@
         <div class="container">
             <h2 class="text-center my-5 text-uppercase">Experiences</h2>
             <h3 class="text-primary my-5">Educations:</h3>
-
             <h3 class="text-primary my-5">Career:</h3>
-
 
         </div>
     </section>

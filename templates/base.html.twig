@@ -6,6 +6,7 @@
             {% block title %}Gersey Stelmach | Web developer based in Orléans, France
             {% endblock %}
         </title>
+         <link rel="icon" href="{{ asset('build/images/logositegersey.png') }}" type="image/png" />
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -13,8 +14,10 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        
     </head>
     <body>
+   
         {% block navbar %}{% endblock %}
         {% block body %}{% endblock %}
     </body>
