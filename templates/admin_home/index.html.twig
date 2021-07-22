@@ -4,29 +4,31 @@
 {% endblock %}
 
 {% block body %}
-   
+
     <main class="container mt-5">
-        <h1>Gersey Stelmach's Admin Panel</h1>
-        <div>
-            <a href="{{ path('skill_index') }} ">Skills</a>
-        </div>
-        <div>
-            <a href="{{ path('experience_index') }}">Experiences</a>
+
+        <div class="text-center">
+            <h1 class="my-5">Gersey Stelmach's Admin Panel</h1>
+            <div>
+                <a href="{{ path('skill_index') }} " class="btn btn-secondary fw-bold my-2 w-25">Skills</a>
+            </div>
+            <div>
+                <a href="{{ path('experience_index') }}" class="btn btn-secondary fw-bold my-2 w-25">Experiences</a>
+            </div>
+
+            <div>
+                <a href="{{ path('portfolio_index') }}" class="btn btn-secondary fw-bold my-2 w-25">Portfolio</a>
+            </div>
+            <div>
+                <a href="{{ path('category_index') }}" class="btn btn-secondary fw-bold my-2 w-25">Category</a>
+            </div>
+            <div>
+                <a href="{{ path('article_index') }}" class="btn btn-secondary fw-bold my-2 w-25">Blog</a>
+            </div>
+            <div class="my-5">
+                <a href="{{ path('home') }}" class="btn btn-primary w-25 fw-bold">My website</a>
+            </div>
         </div>
 
-        <div>
-            <a href="{{ path('portfolio_index') }}">Portfolio</a>
-        </div>
-        <div>
-            <a href="{{ path('category_index') }}">Category</a>
-        </div>
-        <div>
-            <a href="{{ path('article_index') }}">Blog</a>
-        </div>
-
-
-        <div class="my-5">
-            <a href="{{ path('home') }}" class="btn btn-primary">My website</a>
-        </div>
     </main>
 {% endblock %}
