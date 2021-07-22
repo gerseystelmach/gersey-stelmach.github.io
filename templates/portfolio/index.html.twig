@@ -22,10 +22,10 @@
                 <td>{{ portfolio.id }}</td>
                 <td>{{ portfolio.projectName }}</td>
                 <td>{{ portfolio.description }}</td>
-                <td>{{ portfolio.image }}</td>
+                <td><img src="{{ portfolio.image }} " alt="" class="w-50"></td>
                 <td>
                     <a href="{{ path('portfolio_show', {'id': portfolio.id}) }}">show</a>
-                    <a href="{{ path('portfolio_edit', {'id': portfolio.id}) }}">edit</a>
+                    <a href="{{ path('portfolio_edit', {'id': portfolio.id}) }}" >edit</a>
                 </td>
             </tr>
         {% else %}
