@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PortfolioRepository::class)
@@ -25,6 +26,8 @@ class Portfolio
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max="255")
+     * @Assert\NotBlank()
      */
     private $projectName;
 
@@ -40,6 +43,15 @@ class Portfolio
 
     /**
      * @Vich\UploadableField(mapping="image_file", fileNameProperty="image")
+     * @Assert\File(
+     * maxSize="2048000",
+     * mimeTypes = {
+     *     "image/png",
+     *     "image/jpeg",
+     *     "image/jpg",
+     *     "image/webp",
+     *     "image/svg",
+     * })
      * @var File
      */
     private $imageFile;
