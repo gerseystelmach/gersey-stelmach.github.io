@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <main>
         <header>
             <div class="hero-image p-0">
@@ -109,12 +108,49 @@
     </section>
 
     <section id="experiences">
-
         <div class="container">
             <h2 class="text-center my-5 text-uppercase">Experiences</h2>
-            <h3 class="text-primary my-5">Educations:</h3>
-            <h3 class="text-primary my-5">Career:</h3>
+            <h3 class="text-primary my-5 fw-bold">Educations:</h3>
+            <div class="row">
+                {% for experience in experiences  %}
+                    {% if experience.category.name == 'Education' %}
+                        
+                            <div class="col col-md-4 cardExperience">
+                                <h4 class="text-intermediary fw-bold">{{ experience.company }}</h4>
+                                <h5 class="text-dark fw-bold">{{ experience.startedAt ? experience.startedAt|date('m/Y')}}
+                                    |
+                                    {{ experience.finishedAt ? experience.finishedAt|date('m/Y')}}
+                                </h5>
+                            </div>
+                            <div class="col col-md-6 cardExperience ">
+                                <h4 class="text-intermediary fw-bold">{{ experience.title }}</h4>
+                                <p>{{ experience.description }}
+                                </p>
+                            </div>
+                      
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <h3 class="text-primary my-5 fw-bold">Career:</h3>
+            <div class="row">
+                {% for experience in experiences  %}
+                    {% if experience.category.name == 'Career' %}
 
+                        <div class="col col-md-4 cardExperience">
+                            <h4 class="text-intermediary fw-bold">{{ experience.company }}</h4>
+                            <h5 class="text-dark fw-bold">{{ experience.startedAt ? experience.startedAt|date('m/Y')}}
+                                |
+                                {{ experience.finishedAt ? experience.finishedAt|date('m/Y')}}
+                            </h5>
+                        </div>
+                        <div class="col col-md-6 cardExperience">
+                            <h4 class="text-intermediary fw-bold">{{ experience.title }}</h4>
+                            <p>{{ experience.description }}
+                            </p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </section>
 
@@ -128,77 +164,28 @@
         <div id="cards_landscape_wrap-2">
             <div class="container">
                 <h2 class="text-center my-5 text-uppercase">Portfolio</h2>
-               <div class="row">
-                {% for portfolio in portfolios%}
-                 
-                    <div class="col col-sm-6 col-md-3 col-lg-3">
-                        <a href="#porftolio">
-                            <div class="card-flyer">
-                                <div class="text-box">
-                                    <div class="image-box">
-                                        <img src="{{ portfolio.image }} " alt="" class="img-fluid">
-                                    </div>
-                                    <div class="text-container">
-                                        <h6>{{ portfolio.projectName }} </h6>
-                                        <p>{{ portfolio.description }} </p>
+                <div class="row">
+                    {% for portfolio in portfolios%}
+                        <div class="col col-sm-6 col-md-3 col-lg-3">
+                            <a href="#porftolio">
+                                <div class="card-flyer">
+                                    <div class="text-box">
+                                        <div class="image-box">
+                                            <img src="{{ portfolio.image }} " alt="" class="img-fluid">
+                                        </div>
+                                        <div class="text-container">
+                                            <h6>{{ portfolio.projectName }}
+                                            </h6>
+                                            <p>{{ portfolio.description }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    
+                            </a>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
-
     </div>
-</section></main>{% endblock %}{% block footer %}<footer
-class="bg-secondary text-center text-white">
-<!-- Grid container -->
-<div
-    class="container p-4 pb-0">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-        <div class="row">
-            <p class="col-6">E-mail: gerseystelmach@gmail.com</p>
-
-            <p class="col-6">Telephone: +33 06 38 14 10 20</p>
-        </div>
-        <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-
-        <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-            <i class="fab fa-github"></i>
-        </a>
-    </section>
-    <!-- Section: Social media -->
-</div>
-<!-- Grid container -->
-
-<!-- Copyright -->
-<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    <p>
-        ©
-        {{ "now"|date("Y") }}
-        All rights reserved.
-    </p>
-    <p>
-        Handcrafted by
-        <a class="text-white" href="/">Gersey Stelmach</a>
-    </p>
-</div>
-<!-- Copyright --></footer>{% endblock %}
+</section></main>{% endblock %}
