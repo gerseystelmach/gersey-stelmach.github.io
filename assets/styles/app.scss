@@ -223,3 +223,15 @@ li {
     letter-spacing: 1px;
     color: $intermediary;
 }
+
+/* Experience Section */
+
+.cardExperience {
+
+    transition: transform .2s;
+
+    &:hover {
+        transform: scale(104%);
+    }
+
+}

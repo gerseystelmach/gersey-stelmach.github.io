@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Portfolio;
+use App\Repository\ExperienceRepository;
 use App\Repository\PortfolioRepository;
 use App\Repository\SkillRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,11 +15,13 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(SkillRepository $skillRepository, PortfolioRepository $portfolioRepository): Response
+    public function index(SkillRepository $skillRepository, PortfolioRepository $portfolioRepository, ExperienceRepository $experienceRepository): Response
     {
         return $this->render('home/index.html.twig', [
             'skills' => $skillRepository->findAll(),
             'portfolios' => $portfolioRepository->findAll(),
+            'experiences' => $experienceRepository->findAll(),
+
         ]);
     }
 }
