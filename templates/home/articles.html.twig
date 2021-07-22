@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="{{ path('home') }}">
+                <img src="{{ asset('build/images/logositegersey.png') }}" alt="Gersey Logo" width="50" height="50" class="d-inline-block align-text-top">
+            </a>
+            {% if app.user %}
+                <div>
+                    <span class="me-2 text-light">{{ app.user.email }}
+                    </span>
+                    <a href="{{ path('app_logout') }}" class="btn btn-secondary fw-bold text-light">
+                        Logout</a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="text-center my-5 text-uppercase">Articles</h2>
+            {% for article in articles   %}
+                <div class="card my-3">
+                    <h5 class="card-header fw-bold text-intermediary">{{ article.title }}</h5>
+                    <div class="card-body">
+                        <span class="text-dark d-inline-block font-text text-intermediary">
+                            Posted on
+                            {{ article.createdAt ? article.createdAt|date('d/m/Y - H:i' ) : '' }}
+                        </span>
+                        {% if article.article|length > 115  %}
+                            <p class="card-text">{{ article.article|slice(0, 115) }}...<a href="{{ path('home_article_show', {'id': article.id}) }}" class="btn btn-secondary text-center mx-5">Read more</a>
+                            </p>
+
+                        {% else %}
+                            <p class="card-text">{{ article.article }}</p>
+                        </a>
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+ <div class="text-center">
+        <a href="{{ path('home') }}" class="btn btn-dark text-center my-5"> Return to Home Page</a>
+        </div>
+</section>{% endblock %}

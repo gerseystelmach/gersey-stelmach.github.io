@@ -42,7 +42,7 @@ class ArticleFixtures extends Fixture
             $article->setCreatedAt(new DateTime('now'));
             $article->setUpdatedAt(new DateTime('now'));
 
-            $urlImage = 'https://picsum.photos/seed/picsum/500/600';
+            $urlImage = 'https://picsum.photos/800/400';
             $path = uniqid() . '.jpg';
 
             // Function to save image URL into file

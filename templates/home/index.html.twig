@@ -1,120 +1,68 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutHome.html.twig' %}
 
 {% block body %}
     <main>
-        <header>
-            <div class="hero-image p-0">
+        <section id="aboutMe" class="my-5">
+            <div class="container">
+                <h2 class="text-center text-uppercase" class="my-5">About me</h2>
+                <div class="row mt-5">
+                    <div class="col col-lg-7 text-justify">
+                        <p class="mb-5 pe-lg-5">After moving to France in the end of 2019, I decided to make a career transition to transform my passion for computing and technology into my new profession and I'm currently studying web development at Wild Code School. You can check the things I have done in my github account.</p>
 
-                <nav class="text-end d-flex justify-content-md-end">
-                    {% if app.user %}
-                        <div class"p-2">
-                            <p>
-                                Olá, Gersey. You are authenticated as
-                                <span class="fw-bold">{{ app.user.email }}
-                                </span>
-                                <a href="{{ path('admin_home') }}" class="btn btn-secondary mx-2 fw-bold">
-                                    Admin Panel
-                                </a>
-                                <a href="{{ path('app_logout') }}" class="btn btn-dark my-5 me-5 fw-bold">
-                                    Disconnect</a>
-                            </p>
-                        </div>
-                    {% endif %}
-                    <div class="bg-secondary d-flex flex-column nav-style align-items-start p-5 rounded-bottom">
+                        <p class="mb-5 pe-lg-5">Although, my professional path began on the legal field in Brazil, where I could work for over 4 years in the Automotive Industry as In-house counsel and acquired extensive experience in negotiating, drafting and reviewing commercial and IT contracts. At the time, my enthusiasm for tech lead me to pursue a Specialist degree in Digital Law at USP (Universidade de São Paulo).</p>
 
-                        <a class="nav-link mt-5 p-5 p-lg-2 nav-font text-light" href="#aboutMe">About me</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#experiences">Experiences</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="">Portfolio</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="">Blog</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="">Contact</a>
+                        <p class="mb-5 pe-lg-5">I have a multicultural background, speak 3 languages (Portuguese, English and French) and I am also passionate about games, cooking and cycling.</p>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-4 text-center">
+                        <img src="{{ asset('build/images/gersey.svg') }}" alt="Gersey's photo">
 
                     </div>
-                </nav>
-                <div class="hero-text text-left">
-                    <h1 class="display-1 mt-5-xl fw-bold">Gersey Stelmach</h1>
-                    <p class="display-5 text-secondary">A web developer based in France who loves to design and code simple, beautiful and functional things.</p>
                 </div>
-
-                <div class="text-end">
-                    <div class="mt-5 text-end p-5 scrollDown d-inline-block text-end">
-                        <a href="#aboutMe" class="me-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewbox="0 0 172 172" style=" fill:#000000;">
-                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-                                    <path d="M0,172v-172h172v172z" fill="none"></path>
-                                    <g>
-                                        <path d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z" fill="#cccccc"></path>
-                                        <path d="M119.29141,66.28047c-10.27969,10.27969 -20.55938,20.59297 -30.87266,30.87266c-10.31328,-10.31328 -20.62656,-20.62656 -30.93984,-30.93984c-9.00313,-9.00313 -22.91094,5.00547 -13.87422,14.04219c12.63125,12.63125 25.2625,25.2625 37.89375,37.89375c3.82969,3.82969 10.17891,3.72891 13.94141,-0.06719c12.63125,-12.63125 25.2625,-25.2625 37.89375,-37.89375c8.96953,-9.03672 -5.03906,-22.94453 -14.04219,-13.90781z" fill="#ffffff"></path>
-                                    </g>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="aboutMe" class="my-5">
-        <div class="container">
-            <h2 class="text-center text-uppercase" class="my-5">About me</h2>
-            <div class="row mt-5">
-                <div class="col col-lg-7 text-justify">
-                    <p class="mb-5 pe-lg-5">After moving to France in the end of 2019, I decided to make a career transition to transform my passion for computing and technology into my new profession and I'm currently studying web development at Wild Code School. You can check the things I have done in my github account.</p>
-
-                    <p class="mb-5 pe-lg-5">Although, my professional path began on the legal field in Brazil, where I could work for over 4 years in the Automotive Industry as In-house counsel and acquired extensive experience in negotiating, drafting and reviewing commercial and IT contracts. At the time, my enthusiasm for tech lead me to pursue a Specialist degree in Digital Law at USP (Universidade de São Paulo).</p>
-
-                    <p class="mb-5 pe-lg-5">I have a multicultural background, speak 3 languages (Portuguese, English and French) and I am also passionate about games, cooking and cycling.</p>
-                </div>
-
-                <div class="col-sm-12 col-lg-4 text-center">
-                    <img src="{{ asset('build/images/gersey.svg') }}" alt="Gersey's photo">
-
-                </div>
-            </div>
-            <div class="mt-5 d-flex justify-content-between">
-                <div class="w-50 rounded p-5 m-5 bg-white cardSkill text-center">
-                    <h3 class="mb-5 fw-bold text-primary">Development</h3>
-                    <h4 class="fw-bold">Technologies I use:</h4>
-                    <div class="my-5">
-                        {% for skill in skills  %}
-                            <h5 class="d-inline-block text-uppercase">
-                                ♦
-                                <span class="text-secondary fw-bold d-inline-block hover-underline-animation">{{ skill.name }}</span>
-
-                            </h5>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="w-50  rounded p-5 m-5 bg-white cardSkill text-center">
-                    <h3 class="mb-5 fw-bold text-primary">Tools</h3>
-                    <div>
-                        <h4 class="fw-bold">Tools I use:</h4>
+                <div class="mt-5 d-flex justify-content-between">
+                    <div class="w-50 rounded p-5 m-5 bg-white cardSkill text-center">
+                        <h3 class="mb-5 fw-bold text-primary">Development</h3>
+                        <h4 class="fw-bold">Technologies I use:</h4>
                         <div class="my-5">
                             {% for skill in skills  %}
-                                {% if skill.category.name == 'Development' %}
-                                    <h5 class="d-inline-block text-uppercase">
-                                        ♦
-                                        <span class="text-secondary fw-bold  hover-underline-animation">{{ skill.name }}</span>
+                                <h5 class="d-inline-block text-uppercase">
+                                    ♦
+                                    <span class="text-secondary fw-bold d-inline-block hover-underline-animation">{{ skill.name }}</span>
 
-                                    </h5>
-                                {% endif %}
+                                </h5>
                             {% endfor %}
                         </div>
                     </div>
+
+                    <div class="w-50  rounded p-5 m-5 bg-white cardSkill text-center">
+                        <h3 class="mb-5 fw-bold text-primary">Tools</h3>
+                        <div>
+                            <h4 class="fw-bold">Tools I use:</h4>
+                            <div class="my-5">
+                                {% for skill in skills  %}
+                                    {% if skill.category.name == 'Development' %}
+                                        <h5 class="d-inline-block text-uppercase">
+                                            ♦
+                                            <span class="text-secondary fw-bold  hover-underline-animation">{{ skill.name }}</span>
+
+                                        </h5>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experiences">
-        <div class="container">
-            <h2 class="text-center my-5 text-uppercase">Experiences</h2>
-            <h3 class="text-primary my-5 fw-bold">Educations:</h3>
-            <div class="row">
-                {% for experience in experiences  %}
-                    {% if experience.category.name == 'Education' %}
-                        
+        <section id="experiences">
+            <div class="container">
+                <h2 class="text-center my-5 text-uppercase">Experiences</h2>
+                <h3 class="text-primary my-5 fw-bold">Educations:</h3>
+                <div class="row">
+                    {% for experience in experiences  %}
+                        {% if experience.category.name == 'Education' %}
+
                             <div class="col col-md-4 cardExperience">
                                 <h4 class="text-intermediary fw-bold">{{ experience.company }}</h4>
                                 <h5 class="text-dark fw-bold">{{ experience.startedAt ? experience.startedAt|date('m/Y')}}
@@ -127,43 +75,65 @@
                                 <p>{{ experience.description }}
                                 </p>
                             </div>
-                      
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <h3 class="text-primary my-5 fw-bold">Career:</h3>
-            <div class="row">
-                {% for experience in experiences  %}
-                    {% if experience.category.name == 'Career' %}
 
-                        <div class="col col-md-4 cardExperience">
-                            <h4 class="text-intermediary fw-bold">{{ experience.company }}</h4>
-                            <h5 class="text-dark fw-bold">{{ experience.startedAt ? experience.startedAt|date('m/Y')}}
-                                |
-                                {{ experience.finishedAt ? experience.finishedAt|date('m/Y')}}
-                            </h5>
-                        </div>
-                        <div class="col col-md-6 cardExperience">
-                            <h4 class="text-intermediary fw-bold">{{ experience.title }}</h4>
-                            <p>{{ experience.description }}
-                            </p>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <h3 class="text-primary my-5 fw-bold">Career:</h3>
+                <div class="row">
+                    {% for experience in experiences  %}
+                        {% if experience.category.name == 'Career' %}
 
-    <section id="article">
-        <div class="container">
-            <h2 class="text-center my-5 text-uppercase">Article</h2>
+                            <div class="col col-md-4 cardExperience">
+                                <h4 class="text-intermediary fw-bold">{{ experience.company }}</h4>
+                                <h5 class="text-dark fw-bold">{{ experience.startedAt ? experience.startedAt|date('m/Y')}}
+                                    |
+                                    {{ experience.finishedAt ? experience.finishedAt|date('m/Y')}}
+                                </h5>
+                            </div>
+                            <div class="col col-md-6 cardExperience">
+                                <h4 class="text-intermediary fw-bold">{{ experience.title }}</h4>
+                                <p>{{ experience.description }}
+                                </p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="article">
+            <div class="container">
+                <h2 class="text-center my-5 text-uppercase">Article</h2>
+                {% for article in articles|slice(0, 3)   %}
+                    <div class="card my-3">
+                        <h5 class="card-header fw-bold text-intermediary">{{ article.title }}
+                        </h5>
+                        <div class="card-body">
+                            <span class="text-dark d-inline-block font-text text-intermediary">
+                                {{ article.createdAt ? article.createdAt|date('d/m/Y') : '' }}
+                            </span>
+                            {% if article.article|length > 115  %}
+                                <p class="card-text">{{ article.article|slice(0, 115) }}...<a href="{{ path('home_article_show', {'id': article.id}) }}" class="btn btn-secondary text-center mx-5">Read more</a>
+                                </p>
+
+                            {% else %}
+                                <p class="card-text">{{ article.article }}</p>
+                            </a>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="text-center">
+            <a href="/articles" class="btn btn-primary mt-3">See all my articles</a>
         </div>
     </section>
 
     <section id="portfolio">
         <div id="cards_landscape_wrap-2">
             <div class="container">
-                <h2 class="text-center my-5 text-uppercase">Portfolio</h2>
+                <h2 class="text-center  text-uppercase">Portfolio</h2>
                 <div class="row">
                     {% for portfolio in portfolios%}
                         <div class="col col-sm-6 col-md-3 col-lg-3">
