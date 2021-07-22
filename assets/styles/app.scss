@@ -24,6 +24,7 @@ nav a {
 a { 
     text-decoration: none;
 }
+
 h2 {
     font-family: $titleFont;
     color: $primary;
@@ -113,6 +114,15 @@ li {
 
     &:hover {
         transform: translateY($space-2);
+    }
+}
+
+a.nav-hover {
+    color: $light;
+    transition: color .2s ease-in;
+
+    &:hover {
+        color: $primary;
     }
 }
 
