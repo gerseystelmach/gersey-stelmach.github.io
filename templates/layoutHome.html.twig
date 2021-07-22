@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ parent() }}   
+    {{ parent() }}
 {% endblock %}
 
 {% block stylesheets %}
@@ -10,56 +10,91 @@
 
 {% block header %}
     <header>
-            <div class="hero-image p-0">
+        <div class="hero-image p-0">
 
-                <nav class="text-end d-flex justify-content-md-end">
-                    {% if app.user %}
-                        <div class"p-2">
-                            <p>
-                                Olá, Gersey. You are authenticated as
-                                <span class="fw-bold">{{ app.user.email }}
-                                </span>
-                                <a href="{{ path('admin_home') }}" class="btn btn-secondary mx-2 fw-bold">
-                                    Admin Panel
-                                </a>
-                                <a href="{{ path('app_logout') }}" class="btn btn-dark my-5 me-5 fw-bold">
-                                    Disconnect</a>
-                            </p>
-                        </div>
-                    {% endif %}
-                    <div class="bg-secondary d-flex flex-column nav-style align-items-start p-5 rounded-bottom">
-
-                        <a class="nav-link mt-5 p-5 p-lg-2 nav-font text-light" href="#aboutMe">About me</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#experiences">Experiences</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#portfolio">Portfolio</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="/articles">Articles</a>
-                        <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#contact">Contact</a>
-
+            <nav class="text-end d-flex justify-content-md-end">
+                {% if app.user %}
+                    <div class"p-2">
+                        <p>
+                            Olá, Gersey. You are authenticated as
+                            <span class="fw-bold">{{ app.user.email }}
+                            </span>
+                            <a href="{{ path('admin_home') }}" class="btn btn-secondary mx-2 fw-bold">
+                                Admin Panel
+                            </a>
+                            <a href="{{ path('app_logout') }}" class="btn btn-dark my-5 me-5 fw-bold">
+                                Disconnect</a>
+                        </p>
                     </div>
-                </nav>
-                <div class="hero-text text-left">
-                    <h1 class="display-1 mt-5-xl fw-bold">Gersey Stelmach</h1>
-                    <p class="display-5 text-secondary">A web developer based in France who loves to design and code simple, beautiful and functional things.</p>
+                {% endif %}
+                <div class="bg-secondary d-flex flex-column nav-style align-items-start p-5 rounded-bottom">
+
+                    <a class="nav-link mt-5 p-5 p-lg-2 nav-font text-light" href="#aboutMe">About me</a>
+                    <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#experiences">Experiences</a>
+                    <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#portfolio">Portfolio</a>
+                    <a class="nav-link p-5 p-lg-2 nav-font text-light" href="/articles">Articles</a>
+                    <a class="nav-link p-5 p-lg-2 nav-font text-light" href="#contact">Contact</a>
+
                 </div>
+            </nav>
+            <div class="hero-text text-left">
+                <h1 class="display-1 mt-5-xl fw-bold">Gersey Stelmach</h1>
+                <p class="display-5 text-secondary">A web developer based in France who loves to design and code simple, beautiful and functional things.</p>
+            </div>
 
-                <div class="text-end">
-                    <div class="mt-5 text-end p-5 scrollDown d-inline-block text-end">
-                        <a href="#aboutMe" class="me-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewbox="0 0 172 172" style=" fill:#000000;">
-                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-                                    <path d="M0,172v-172h172v172z" fill="none"></path>
-                                    <g>
-                                        <path d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z" fill="#cccccc"></path>
-                                        <path d="M119.29141,66.28047c-10.27969,10.27969 -20.55938,20.59297 -30.87266,30.87266c-10.31328,-10.31328 -20.62656,-20.62656 -30.93984,-30.93984c-9.00313,-9.00313 -22.91094,5.00547 -13.87422,14.04219c12.63125,12.63125 25.2625,25.2625 37.89375,37.89375c3.82969,3.82969 10.17891,3.72891 13.94141,-0.06719c12.63125,-12.63125 25.2625,-25.2625 37.89375,-37.89375c8.96953,-9.03672 -5.03906,-22.94453 -14.04219,-13.90781z" fill="#ffffff"></path>
-                                    </g>
+            <div class="text-end">
+                <div class="mt-5 text-end p-5 scrollDown d-inline-block text-end">
+                    <a href="#aboutMe" class="me-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewbox="0 0 172 172" style=" fill:#000000;">
+                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                <g>
+                                    <path d="M2.65391,86c0,-46.02344 37.32266,-83.34609 83.34609,-83.34609c46.02344,0 83.34609,37.32266 83.34609,83.34609c0,46.02344 -37.32266,83.34609 -83.34609,83.34609c-46.02344,0 -83.34609,-37.32266 -83.34609,-83.34609z" fill="#cccccc"></path>
+                                    <path d="M119.29141,66.28047c-10.27969,10.27969 -20.55938,20.59297 -30.87266,30.87266c-10.31328,-10.31328 -20.62656,-20.62656 -30.93984,-30.93984c-9.00313,-9.00313 -22.91094,5.00547 -13.87422,14.04219c12.63125,12.63125 25.2625,25.2625 37.89375,37.89375c3.82969,3.82969 10.17891,3.72891 13.94141,-0.06719c12.63125,-12.63125 25.2625,-25.2625 37.89375,-37.89375c8.96953,-9.03672 -5.03906,-22.94453 -14.04219,-13.90781z" fill="#ffffff"></path>
                                 </g>
-                            </svg>
-                        </a>
-                    </div>
+                            </g>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
-{% endblock %}
+    </div>
+</header>{% endblock %}{% block footer %}
+<footer
+    class="text-center text-white bg-secondary">
+    <!-- Grid container -->
+    <div
+        class="container pt-4">
+        <!-- Section: Social media -->
+        <section
+            class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com/gerseystelmach/" role="button" data-mdb-ripple-color="dark">
+                <i class="fab fa-facebook-f"><img src="{{ asset('build/images/facebook.svg') }}" alt="Gersey Stelmach's Facebook"></i>
+            </a>
+          
+            <!-- Instagram -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/gerseystelmach/" role="button" data-mdb-ripple-color="dark">
+                <i class="fab fa-instagram"><img src="{{ asset('build/images/instagram.svg') }}" alt="Gersey Stelmach's Instagram"></i>
+            </a>
 
-{% block footer %}{% endblock %}
+            <!-- Linkedin -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/gerseystelmach/" role="button" data-mdb-ripple-color="dark">
+                <i class="fab fa-linkedin"><img src="{{ asset('build/images/linkedin.svg') }}" alt="Gersey Stelmach's Linkedin"></i>
+            </a>
+            <!-- Github -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/gerseystelmach" role="button" data-mdb-ripple-color="dark">
+                <i class="fab fa-github"><img src="{{ asset('build/images/github.svg') }}" alt="Gersey Stelmach's Linkedin"></i>
+            </a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3 bg-secondary-bright">
+        © {{ "now"|date("Y") }} All rights reserved.
+        <a class="text-dark fw-bold d-block my-1" href="/">Gersey Stelmach</a>
+    </div>
+    <!-- Copyright -->
+</footer>{% endblock %}
