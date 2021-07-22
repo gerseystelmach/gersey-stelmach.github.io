@@ -118,65 +118,87 @@
         </div>
     </section>
 
+    <section id="article">
+        <div class="container">
+            <h2 class="text-center my-5 text-uppercase">Article</h2>
+        </div>
+    </section>
+
     <section id="portfolio">
-        <div class="container">
-            <h2 class="text-center my-5 text-uppercase">Portfolio</h2>
-        </div>
-    </section>
-
-    <section id="articles">
-        <div class="container">
-            <h2 class="text-center my-5 text-uppercase">Articles</h2>
-        </div>
-    </section>
-</main>{% endblock %}{% block footer %}
-<footer
-    class="bg-secondary text-center text-white">
-    <!-- Grid container -->
-    <div
-        class="container p-4 pb-0">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-            <div class="row">
-                <p class="col-6">E-mail: gerseystelmach@gmail.com</p>
-
-                <p class="col-6">Telephone: +33 06 38 14 10 20</p>
+        <div id="cards_landscape_wrap-2">
+            <div class="container">
+                <h2 class="text-center my-5 text-uppercase">Portfolio</h2>
+               <div class="row">
+                {% for portfolio in portfolios%}
+                 
+                    <div class="col col-sm-6 col-md-3 col-lg-3">
+                        <a href="#porftolio">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="{{ portfolio.image }} " alt="" class="img-fluid">
+                                    </div>
+                                    <div class="text-container">
+                                        <h6>{{ portfolio.projectName }} </h6>
+                                        <p>{{ portfolio.description }} </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    {% endfor %}
+                </div>
             </div>
-            <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+        </div>
 
-            <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                <i class="fab fa-github"></i>
-            </a>
-        </section>
-        <!-- Section: Social media -->
     </div>
-    <!-- Grid container -->
+</section></main>{% endblock %}{% block footer %}<footer
+class="bg-secondary text-center text-white">
+<!-- Grid container -->
+<div
+    class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+        <div class="row">
+            <p class="col-6">E-mail: gerseystelmach@gmail.com</p>
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        <p>
-            ©
-            {{ "now"|date("Y") }}
-            All rights reserved.
-        </p>
-        <p>
-            Handcrafted by
-            <a class="text-white" href="/">Gersey Stelmach</a>
-        </p>
-    </div>
-    <!-- Copyright -->
-</footer>{% endblock %}
+            <p class="col-6">Telephone: +33 06 38 14 10 20</p>
+        </div>
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fab fa-github"></i>
+        </a>
+    </section>
+    <!-- Section: Social media -->
+</div>
+<!-- Grid container -->
+
+<!-- Copyright -->
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <p>
+        ©
+        {{ "now"|date("Y") }}
+        All rights reserved.
+    </p>
+    <p>
+        Handcrafted by
+        <a class="text-white" href="/">Gersey Stelmach</a>
+    </p>
+</div>
+<!-- Copyright --></footer>{% endblock %}

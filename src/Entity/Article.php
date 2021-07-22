@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 use DateTime;
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -22,11 +23,14 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max="255") 
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()     
      */
     private $article;
 
@@ -35,12 +39,17 @@ class Article
      */
     private $poster;
 
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-
-    /**
+     /**
      * @Vich\UploadableField(mapping="article_file", fileNameProperty="poster")
+     * @Assert\File(
+     * maxSize="2048000",
+     * mimeTypes = {
+     *     "image/png",
+     *     "image/jpeg",
+     *     "image/jpg",
+     *     "image/webp",
+     *     "image/svg",
+     * })
      * @var File
      */
     private $posterFile;
@@ -98,12 +107,11 @@ class Article
 
         return $this;
     }
+
     /**
      * 
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $posterFile
      */
-
-
     public function setPosterFile(File $image = null): Article
     {
         $this->posterFile = $image;
