@@ -1,5 +1,6 @@
 $primary: #125D98;
 $secondary:#F5A962;
+
 $intermediary:#3C8DAD;
 $light: #FBFBFB;
 $white: #FFF;
@@ -20,4 +21,9 @@ $textSize: 1.3em;
 
 .font-text {
     font-family: $textFont;
+}
+
+.bg-secondary-bright {
+    background-color: $secondary;
+    filter: brightness(110%);
 }
