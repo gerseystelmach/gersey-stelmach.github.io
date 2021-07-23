@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <th>Poster</th>
-                <td><img src="{{ article.poster }} " alt="" class="w-25"></td>
+                <td><img src="{{ asset('/uploads/article/' ~ article.poster) }}" alt="" class="w-25"></td>
             </tr>
             <tr>
                 <th>CreatedAt</th>

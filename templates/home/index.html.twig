@@ -141,7 +141,7 @@
                                 <div class="card-flyer">
                                     <div class="text-box">
                                         <div class="image-box">
-                                            <img src="{{ portfolio.image }} " alt="" class="img-fluid">
+                                            <img src="{{ asset('uploads/' ~ portfolio.image) }}" alt="{{ portfolio.projectName }}" class="img-fluid">
                                         </div>
                                         <div class="text-container">
                                             <h6>{{ portfolio.projectName }}

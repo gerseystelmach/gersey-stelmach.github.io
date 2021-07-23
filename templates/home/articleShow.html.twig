@@ -28,7 +28,7 @@
                     {{ article.createdAt ? article.createdAt|date('d/m/Y - H:i' ) : '' }}
                 </span>
                 <div class="my-5">
-                    <img src="{{ article.poster }}" alt="{{ article.title }} poster" class="rounded">
+                    <img src="{{ asset('uploads/article/' ~ article.poster) }}" alt="{{ article.title }} poster" class="rounded">
                 </div>
 
                 <p>

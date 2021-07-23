@@ -47,7 +47,7 @@ class ArticleFixtures extends Fixture
 
             // Function to save image URL into file
             copy($urlImage, 'public/uploads/article/' . $path);
-            $imagePath = '/uploads/article/' . $path;
+            $imagePath = $path;
             $article->setPoster($imagePath);
             $manager->persist($article);
         }

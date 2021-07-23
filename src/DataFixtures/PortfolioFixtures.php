@@ -47,8 +47,8 @@ class PortfolioFixtures extends Fixture implements DependentFixtureInterface
             $path = uniqid() . '.jpg';
 
             // Function to save image URL into file
-            copy($urlImage, 'public/uploads/article/' . $path);
-            $imagePath = '/uploads/article/' . $path;
+            copy($urlImage, 'public/uploads/' . $path);
+            $imagePath = $path;
             $portfolio->setImage($imagePath);
            
 

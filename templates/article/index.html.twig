@@ -27,7 +27,7 @@
                 <td>{{ article.id }}</td>
                 <td>{{ article.title }}</td>
                 <td>{{ article.article }}</td>
-                <td><img src="{{ article.poster }} " alt="" class="w-50"></td>
+                <td><img src="{{ asset('/uploads/article/' ~ article.poster) }}" alt="" class="w-50"></td>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
