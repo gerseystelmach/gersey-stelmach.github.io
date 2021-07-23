@@ -1,40 +1,41 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}Skills{% endblock %}
+{% block title %}Skills
+{% endblock %}
 
 {% block body %}
-<main class="container mt-5">
-    <h1>Skills</h1>
+    <main class="container mt-5">
+        <h1>Skills</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for skill in skills %}
-            <tr>
-                <td>{{ skill.id }}</td>
-                <td>{{ skill.name }}</td>
-                <td>
-                    <a href="{{ path('skill_show', {'id': skill.id}) }}">show</a>
-                    <a href="{{ path('skill_edit', {'id': skill.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th class="w-25">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for skill in skills %}
+                    <tr>
+                        <td>{{ skill.id }}</td>
+                        <td>{{ skill.name }}</td>
+                        <td>
+                            <a href="{{ path('skill_show', {'id': skill.id}) }}" class="btn btn-primary my-1 w-50">Show</a>
+                            <a href="{{ path('skill_edit', {'id': skill.id}) }}" class="btn btn-secondary my-1  w-50">Edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">no records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
 
-    <a href="{{ path('skill_new') }}" class="btn btn-success">Create new</a>
-       <a href="{{ path('admin_home') }}" class="btn btn-primary">Return to home page</a>
+        <a href="{{ path('skill_new') }}" class="btn btn-success">Create new</a>
+        <a href="{{ path('admin_home') }}" class="btn btn-primary">Return to home page</a>
 
     </main>
 {% endblock %}

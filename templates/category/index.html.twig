@@ -11,7 +11,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,9 +19,9 @@
             <tr>
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
-                <td>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                <td class="w-25">
+                    <a href="{{ path('category_show', {'id': category.id}) }}" class="btn btn-primary my-1 w-25">Show</a>
+                    <a href="{{ path('category_edit', {'id': category.id}) }}" class="btn btn-secondary my-1  w-25">Edit</a>
                 </td>
             </tr>
         {% else %}
