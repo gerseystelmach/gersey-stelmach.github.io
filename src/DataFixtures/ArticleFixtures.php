@@ -31,6 +31,16 @@ class ArticleFixtures extends Fixture
             'article' => "
             The advantage of using a VR rig without a tether is huge because in a complex movement-oriented game you tend to get tangled in the tether. Let's talk about the Oculus Quest 2 this week and the announcement that this class of products is about to embrace 5G for its next generation. We'll close with the product of the week, a new webcam from Dell that may be perfect for those of us still working from home.",
         ],
+        [
+            'name' => 'AI breakthrough could spark medical revolution',
+            'article' => "
+            The advantage of using a VR rig without a tether is huge because in a complex movement-oriented game you tend to get tangled in the tether. Let's talk about the Oculus Quest 2 this week and the announcement that this class of products is about to embrace 5G for its next generation. We'll close with the product of the week, a new webcam from Dell that may be perfect for those of us still working from home.",
+        ],
+        [
+            'name' => "Gun owners' fears after firearms dealer data breach",
+            'article' => "
+            The advantage of using a VR rig without a tether is huge because in a complex movement-oriented game you tend to get tangled in the tether. Let's talk about the Oculus Quest 2 this week and the announcement that this class of products is about to embrace 5G for its next generation. We'll close with the product of the week, a new webcam from Dell that may be perfect for those of us still working from home.",
+        ],
     ];
 
     public function load(ObjectManager $manager)
